@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área 2 - Quiz BioClean</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 50px;
+      color: #00334e;
+      text-align: center;
+    }
+
+    h2 {
+      color: teal;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .quiz-container {
+      background-color: #ffffff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #005f86;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: bold;
+    }
+
+    a:hover {
+      color: #03045e;
+    }
+    .question {
+  display: none;
+}
+.question.active {
+  display: block;
+}
+.next-btn {
+  display: none;
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #009688;
+  color: white;
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+
+  <h2>Quiz BioClean – Prestou atenção?</h2>
+
+  <div class="quiz-container">
+
+  <!-- Pergunta 1 -->
+  <div class="question active">
+    <p><strong>Primeira pergunta.</strong></p>
+    <p>Qual enzima do BioClean degrada proteínas?</p>
+    <button onclick="checkAnswer(this, true)">a) Protease</button>
+    <button onclick="checkAnswer(this, false)">b) Lipase</button>
+    <button onclick="checkAnswer(this, false)">c) Amilase</button>
+    <p class="feedback"></p>
+    <button class="next-btn" onclick="nextQuestion()">Próxima Pergunta</button>
+  </div>
+
+  <!-- Pergunta 3 -->
+  <div class="question">
+    <p><strong>Outra pergunta.</strong></p>
+    <p>Por que a combinação de diferentes enzimas (protease, lipase e amilase) em uma mesma formulação de detergente enzimático é considerada estratégica?</p>
+    <button onclick="checkAnswer(this, true)">a) Porque diminui a necessidade de surfactantes e amplia a eficácia contra diferentes tipos de sujidade</button>
+    <button onclick="checkAnswer(this, false)">b) Porque elimina a necessidade de estabilizantes como glicerina</button>
+    <button onclick="checkAnswer(this, false)">c) Porque reduz a quantidade de água necessária no preparo do detergente</button>
+    <button onclick="checkAnswer(this, false)">d) Porque substitui a função do pH buffer</button>
+    <p class="feedback"></p>
+    <button class="next-btn" onclick="nextQuestion()">Próxima Pergunta</button>
+  </div>
+
+  <!-- Pergunta 4 -->
+  <div class="question">
+    <p><strong>Mais uma!!</strong></p>
+    <p>Qual é a principal função do propilenoglicol na formulação de detergentes enzimáticos?</p>
+    <button onclick="checkAnswer(this, false)">a) Atuar como catalisador secundário para enzimas</button>
+    <button onclick="checkAnswer(this, false)">b) Reduzir a formação de espuma</button>
+    <button onclick="checkAnswer(this, true)">c) Preservar a estabilidade estrutural e atividade das enzimas durante armazenamento e uso</button>
+    <button onclick="checkAnswer(this, false)">d) Servir como agente branqueador</button>
+    <p class="feedback"></p>
+    <button class="next-btn" onclick="nextQuestion()">Próxima Pergunta</button>
+  </div>
+
+<!-- Pergunta 9 -->
+<div class="question">
+  <p><strong>Decifra-me ou te devoro!</strong></p>
+  <p>Nos resultados esperados do BioClean, qual é o principal diferencial ao ser aplicado em ambiente hospitalar?</p>
+  <button onclick="checkAnswer(this, false)">a) Eliminação completa de microrganismos patogênicos sem necessidade de esterilização</button>
+  <button onclick="checkAnswer(this, true)">b) Capacidade de remover sujidades complexas (proteínas, lipídios e carboidratos) sem danificar instrumentos sensíveis</button>
+  <button onclick="checkAnswer(this, false)">c) Redução da necessidade de água no enxágue em 90%</button>
+  <p class="feedback"></p>
+  <button class="next-btn" onclick="nextQuestion()">Finalizar Quiz</button>
+</div>
+
+</div>
+
+
+
+<script>
+  let perguntas = [
+    {
+      enunciado: "Qual é a função da protease no BioClean?",
+      alternativas: ["Quebrar gorduras", "Degradar proteínas", "Eliminar microrganismos"],
+      correta: 1
+    },
+    {
+      enunciado: "O BioClean pode ser aplicado em quais resíduos?",
+      alternativas: ["Orgânicos", "Inorgânicos", "Metálicos"],
+      correta: 0
+    },
+    {
+      enunciado: "Qual é o benefício ambiental do BioClean?",
+      alternativas: ["Aumenta poluição", "Reduz resíduos orgânicos", "Gera combustíveis fósseis"],
+      correta: 1
+    }
+  ];
+
+  let perguntaAtual = 0;
+
+  function mostrarPergunta() {
+    let p = perguntas[perguntaAtual];
+    document.getElementById("pergunta").innerText = p.enunciado;
+    
+    let alternativasDiv = document.getElementById("alternativas");
+    alternativasDiv.innerHTML = "";
+    
+    p.alternativas.forEach((alt, i) => {
+      let btn = document.createElement("button");
+      btn.innerText = alt;
+      btn.onclick = () => verificarResposta(i);
+      alternativasDiv.appendChild(btn);
+    });
+
+    document.getElementById("resultado").innerText = "";
+    document.getElementById("proxima").style.display = "none";
+  }
+
+  function checkAnswer(button, isCorrect) {
+  let feedback = button.parentElement.querySelector(".feedback");
+  let nextBtn = button.parentElement.querySelector(".next-btn");
+
+  if (isCorrect) {
+    feedback.textContent = "✅ Resposta correta!";
+    feedback.style.color = "green";
+    nextBtn.style.display = "inline-block";
+  } else {
+    feedback.textContent = "❌ Resposta incorreta. Tente novamente!";
+    feedback.style.color = "red";
+  }
+}
+
+function nextQuestion() {
+  let current = document.querySelector(".question.active");
+  let next = current.nextElementSibling;
+
+  current.classList.remove("active");
+
+  if (next && next.classList.contains("question")) {
+    next.classList.add("active");
+  } else {
+    // Cria a tela final
+    let quizContainer = document.querySelector(".quiz-container");
+    quizContainer.innerHTML = `
+      <h2>Já acabou?</h2>
+      <p>Sim, isso era tudo. E já que chegou aqui, achamos que seria legal te contar uma coisinha: clique 5 vezes na logo do BIOCLEAN no topo da página inicial ;)
+      Obrigado por testar seus conhecimentos sobre o BioClean.</p>
+      <a href="index.html">Voltar para a página inicial</a>
+    `;
+  }
+}
+
+  function reiniciar() {
+    perguntaAtual = 0;
+    document.getElementById("quiz").innerHTML = `
+      <h2 id="pergunta"></h2>
+      <div id="alternativas"></div>
+      <p id="resultado"></p>
+      <button id="proxima" onclick="proximaPergunta()">Próxima Pergunta</button>
+    `;
+    mostrarPergunta();
+  }
+
+  mostrarPergunta();
+</script>
+
+</body>
+</html>

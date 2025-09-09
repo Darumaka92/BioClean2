@@ -1,0 +1,202 @@
+!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIOCLEAN</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('fundo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #00334e;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0077b6, #00d9a3, #90e0ef);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      font-family: "Georgia", cursive, sans-serif;
+      text-shadow: 1px 1px 2px #00334e;
+    }
+
+    nav {
+      background: #caf0f8;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0077b6;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #03045e;
+    }
+
+    main {
+      padding: 40px;
+      text-align: center;
+    }
+
+    footer {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+  
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let clicks = 0;
+  const header = document.querySelector('header');
+
+  header.addEventListener('click', () => {
+    clicks++;
+    if (clicks === 5) {
+      alert('Parabéns, você ganhou um cupom de 15% de desconto na compra do seu primeiro BioClean 1L!! ');
+      clicks = 0; // reseta para poder clicar de novo
+    }
+  });
+});
+</script>
+<body>
+  <header>
+    <img src="bioclean.png" alt="BioClean" style="height: 80px;">
+  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="area1.html">Área 1</a>
+    <a href="area2.html">Área 2</a>
+  </nav>
+
+  <main>
+    <h1>Bem-vindo ao <span id="bioCleanEaster">BioClean</span>!</h1>
+    <p>Este é o site oficial do BioClean. Você encontrará aqui nossas áreas interativas, incluindo o quiz!</p>
+  </main>
+<!-- Sessão BioClean -->
+   <!-- CSS -->
+<style>
+  .bio-clean {
+    margin: 20px 30px;
+  }
+</style>
+
+<!-- HTML -->
+<section class="bio-clean">
+    <h2 style="color: teal; font-family: 'Georgia', cursive;">BioClean – Detergente Enzimático Sustentável para Uso Hospitalar e Odontológico</h2>
+    <p>
+            O BioClean é um detergente enzimático inovador, desenvolvido para atender às rigorosas exigências de limpeza hospitalar, cirúrgica e odontológica. Sua formulação combina o poder biotecnológico das enzimas protease, lipase e amilase com surfactantes suaves e estabilizantes naturais, garantindo eficiência máxima na remoção de resíduos orgânicos como sangue, saliva, gorduras, amidos e biofilmes.
+        </p>
+        <p>
+            Diferente dos detergentes convencionais, o BioClean atua de forma direcionada: cada enzima degrada um tipo específico de sujidade, enquanto os surfactantes promovem a emulsificação e dispersão, resultando em uma limpeza profunda sem agredir materiais sensíveis. Além disso, o uso de glicerina e propilenoglicol confere estabilidade à formulação, preservando a atividade enzimática por longos períodos.
+        </p>
+        <p>
+            Outro diferencial é a preocupação ambiental e regulatória. O BioClean foi concebido dentro dos parâmetros da ANVISA e normas internacionais como a ISO 15883, sendo biodegradável, de baixa espuma e seguro para operadores e pacientes. A associação entre ciência, sustentabilidade e inovação posiciona o BioClean como uma alternativa eficaz, confiável e alinhada às novas demandas do setor da saúde.
+        </p>
+    </section>
+<style>
+  .bio-clean {
+    margin: 20px 30px;
+  }
+</style>
+<!-- Seção do produto -->
+<section style="margin: 20px auto; text-align: center;">
+  <h2 style="color: teal; font-family: 'Arial', serif; margin-bottom: 15px;">
+   Veja nosso produto:
+  </h2>
+  <img src="garrafa.png" 
+       alt="BioClean – Detergente Enzimático Sustentável" 
+       width="200" 
+       style="border: 4px solid #0077b6; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+  <p style="margin-top: 20px; font-size: 0.9em; color: #00334e;">
+    Embalagem de 1L – BioClean pronto para uso hospitalar e odontológico. (representação ilustrativa)
+  </p>
+</section>
+
+<!-- HTML -->
+<section class="bio-clean">
+    <h2 style="color: teal; font-family: 'Arial', cursive;">Nossas protagonistas, as Enzimas!</h2>
+    <p>• <strong>Protease (EC 3.4)</strong><br>
+    É a enzima responsável por quebrar proteínas complexas, como sangue, pus e restos de tecidos. Na formulação do BioClean, garante a remoção eficiente de resíduos proteicos típicos de ambientes hospitalares.</p>
+
+    <p>• <strong>Lipase (EC 3.1)</strong><br>
+    Atua sobre gorduras e óleos, degradando triglicerídeos em ácidos graxos e glicerol. No detergente, ajuda a eliminar manchas de gordura corporal e resíduos lipídicos em instrumentos cirúrgicos e odontológicos.</p>
+
+    <p>• <strong>Amilase (EC 3.2)</strong><br>
+    Especializada na degradação de amidos e carboidratos. Complementa a ação das outras enzimas, quebrando restos de alimentos e biofilmes, o que aumenta a eficiência global da limpeza.</p>
+</section>
+<section style="margin-top: 40px; text-align: center;">
+  <h2 style="font-size: 15px; margin-bottom: 10px;">
+    Esquema de uma enzima protease
+  </h2>
+  <div>
+    <img src="protease.png" 
+         alt="Esquema de uma enzima protease" 
+         width="200" 
+         style="border: 3px solid #00d9a3; border-radius: 10px;">
+  </div>
+  <p style="font-size: 0.9em; color: #555;">Fonte: Wikipedia</p>
+</section>
+<section id="formulacao-extra" style="padding: 40px; background-color: #f0f8ff; text-align: left;">
+  <h2 style="color:#003366;">O que mais tem na formulação?</h2>
+  <p>Além da combinação enzimática, o BioClean conta com outros componentes que garantem eficiência, estabilidade e segurança no uso hospitalar e odontológico:</p>
+  <ul style="list-style:none; padding:0; font-size:1.1em; color:#003366;">
+    <li>🧴 <b>Lauril Éter Sulfato de Sódio (5–10%)</b> – Surfactante que emulsifica gorduras e facilita a ação das enzimas.</li>
+    <li>🧪 <b>Ácido Sulfônico (2–4%)</b> – Reforça a capacidade de limpeza em sujidades resistentes.</li>
+    <li>💧 <b>Propilenoglicol (1–3%)</b> – Estabilizante que protege a atividade enzimática durante o armazenamento.</li>
+    <li>🌿 <b>Glicerina (0,5–2%)</b> – Mantém a viscosidade ideal e preserva a estabilidade da formulação.</li>
+    <li>💦 <b>Água deionizada</b> – Veículo e diluente, garantindo pureza e compatibilidade com materiais médicos.</li>
+  </ul>
+</section>
+<!-- Chamada para outras áreas -->
+<section style="margin: 60px auto; text-align: center; padding: 30px; background: #e0f7f9; border-radius: 15px; max-width: 800px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+  <h2 style="color: #0077b6; font-family: 'Georgia', serif; margin-bottom: 15px;">
+    Explore mais o BioClean!
+  </h2>
+  <p style="color: #00334e; font-size: 1.1em; margin-bottom: 20px;">
+    Conheça nossas outras áreas exclusivas e descubra conteúdos interativos e curiosidades sobre nosso detergente enzimático.
+  </p>
+  
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a href="area1.html" style="background: #0077b6; color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+      Área 1
+    </a>
+    <a href="area2.html" style="background: #00d9a3; color: white; padding: 12px 24px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s;">
+      Área 2
+    </a>
+  </div>
+</section>
+  <footer>
+    &copy; 2025 BioClean. Todos os direitos reservados.
+  </footer>
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  let clicks = 0;
+  const bioClean = document.getElementById('bioCleanEaster');
+
+  bioClean.addEventListener('click', () => {
+    clicks++;
+    if (clicks === 5) {
+      alert('Não é esse BioClean, é aquele outro ali de cima!👆');
+      clicks = 0; // reseta o contador
+    }
+  });
+});
+</script>
+</body>
+</html>
